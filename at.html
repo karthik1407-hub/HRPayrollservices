@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracking System</title>
+    <link rel="stylesheet" href="at.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Attendance Tracking System</h1>
+
+        <!-- Add Employee Form -->
+        <div class="form-container">
+            <h2>Add Employee</h2>
+            <form id="employeeForm">
+                <label for="name">Employee Name:</label>
+                <input type="text" id="name" required>
+                <button type="submit">Add Employee</button>
+            </form>
+        </div>
+
+        <!-- Attendance Tracking Table -->
+        <div class="table-container">
+            <h2>Track Attendance</h2>
+            <input type="text" id="searchInput" placeholder="Search Employee..." onkeyup="searchEmployee()">
+            <table id="attendanceTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Attendance</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="attendanceList">
+                    <!-- Dynamic Attendance Rows -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Attendance Modal -->
+        <div id="attendanceModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h2>Mark Attendance</h2>
+                <form id="attendanceForm">
+                    <label for="attendanceDate">Date:</label>
+                    <input type="date" id="attendanceDate" required>
+                    <label for="status">Status:</label>
+                    <select id="status" required>
+                        <option value="Present">Present</option>
+                        <option value="Absent">Absent</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <button id="exportBtn">Export to CSV</button>
+        <h2>Attendance Statistics</h2>
+        <ul id="statsList"></ul>
+    </div>
+
+    <script src="at.js"></script>
+</body>
+</html>

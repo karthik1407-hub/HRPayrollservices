@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ep.css">
+    <title>Employee Profiles</title>
+</head>
+<body>
+    <div>
+     <a href="dashboard.html" class="back">Back</a>
+    </div>
+    <div class="container">
+        <h1>Employee Profiles</h1>
+        <div class="profile-container">
+            <div class="profile-card" onclick="toggleDetails(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://via.placeholder.com/100" alt="Profile Picture">
+                        <h3>John Doe</h3>
+                        <p>Software Engineer</p>
+                        <p>Employee ID: 101</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Contact Info</h3>
+                        <p>Email: john.doe@example.com</p>
+                        <p>Phone: 123-456-7890</p>
+                        <p>Address: 123 Main St, City, State</p>
+                        <p>Salary: $60,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-card" onclick="toggleDetails(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://via.placeholder.com/100" alt="Profile Picture">
+                        <h3>Jane Smith</h3>
+                        <p>Project Manager</p>
+                        <p>Employee ID: 102</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Contact Info</h3>
+                        <p>Email: jane.smith@example.com</p>
+                        <p>Phone: 987-654-3210</p>
+                        <p>Address: 456 Oak St, City, State</p>
+                        <p>Salary: $80,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more profile cards as needed -->
+        </div>
+    </div>
+    <script src="ep.js"></script>
+</body>
+</html>

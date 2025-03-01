@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Management System</title>
+    <link rel="stylesheet" href="pm.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js CDN -->
+</head>
+<body>
+    <div class="container">
+        <h1>Payroll Management System</h1>
+
+        <!-- Dark Mode Toggle -->
+        <div class="dark-mode-toggle">
+            <label for="darkMode">Dark Mode</label>
+            <input type="checkbox" id="darkMode">
+        </div>
+
+        <!-- Add Employee Form -->
+        <div class="form-container">
+            <h2>Add Employee</h2>
+            <form id="employeeForm">
+                <label for="name">Employee Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="salary">Monthly Salary:</label>
+                <input type="number" id="salary" required>
+
+                <label for="workingDays">Working Days:</label>
+                <input type="number" id="workingDays" required>
+
+                <button type="submit">Add Employee</button>
+                <p id="formError" class="error-message"></p>
+            </form>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="search-container">
+            <label for="search">Search by Name:</label>
+            <input type="text" id="search" placeholder="Search employees...">
+            <button id="filterBtn">Filter by Salary</button>
+        </div>
+
+        <!-- Payroll Table -->
+        <div class="table-container">
+            <h2>Employee Payroll</h2>
+            <table id="payrollTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable('id')">#</th>
+                        <th onclick="sortTable('name')">Name</th>
+                        <th onclick="sortTable('salary')">Monthly Salary</th>
+                        <th onclick="sortTable('workingDays')">Working Days</th>
+                        <th onclick="sortTable('netSalary')">Net Salary</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="payrollList">
+                    <!-- Dynamic Payroll Rows -->
+                </tbody>
+            </table>
+            <button id="exportBtn">Export to CSV</button>
+            <div id="pagination" class="pagination"></div>
+        </div>
+
+        <!-- Employee Detail Modal -->
+        <div id="employeeModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <h2>Employee Details</h2>
+                <div id="employeeDetails"></div>
+                <button id="editModalBtn">Edit Employee</button>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="spinner" style="display:none;"></div>
+
+        <!-- Salary Distribution Chart -->
+        <div class="chart-container">
+            <h2>Salary Distribution</h2>
+            <canvas id="salaryChart"></canvas>
+        </div>
+    </div>
+
+    <script src="pm.js"></script>
+</body>
+</html>

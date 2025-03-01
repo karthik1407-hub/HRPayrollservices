@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2c3e50; /* Dark background */
+    color: #ecf0f1;
+}
+
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+header {
+    background-color: #2980b9; /* Header color */
+    padding: 20px;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.sidebar {
+    background-color: #34495e; /* Sidebar color */
+    padding: 20px;
+    flex-shrink: 0;
+    width: 220px; /* Increased width for better usability */
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0; /* Increased margin for spacing */
+}
+
+.sidebar ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    display: block; /* Make the whole area clickable */
+    padding: 10px; /* Add padding for a button-like appearance */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background change */
+}
+
+.sidebar ul li a:hover {
+    background-color: #3498db; /* Link hover color */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling */
+    background-color: #ecf0f1; /* Light background for main content */
+    border-top-left-radius: 10px; /* Rounded top left corner */
+    border-top-right-radius: 10px; /* Rounded top right corner */
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #2980b9; /* Header color */
+}
+
+.calendar {
+    margin-bottom: 30px;
+    background-color: #34495e;
+    border-radius: 10px;
+    padding: 20px;
+    color: #ecf0f1; /* Text color */
+}
+
+.overview-stats, .attendance-stats, .payroll-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    background-color: #2980b9; /* Stat item color */
+    border-radius: 10px;
+    padding: 15px;
+    flex: 1;
+    text-align: center;
+    margin: 0 5px; /* Add margin between stat items */
+    transition: transform 0.2s; /* Smooth scaling on hover */
+}
+
+.stat-item:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+footer {
+    background-color: #2980b9;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

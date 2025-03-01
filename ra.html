@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports and Analytics</title>
+    <link rel="stylesheet" href="ra.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For Chart.js -->
+</head>
+<body>
+    <header>
+        <h1>HR and Payroll Analytics Dashboard</h1>
+    </header>
+
+    <section class="analytics-section">
+        <div class="chart-container">
+            <canvas id="lineChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="barChart"></canvas>
+        </div>
+    </section>
+
+    <section class="table-section">
+        <h2>Employee Payroll Report</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee</th>
+                    <th>Hours Worked</th>
+                    <th>Gross Pay</th>
+                    <th>Taxes</th>
+                    <th>Net Pay</th>
+                </tr>
+            </thead>
+            <tbody id="reportTable">
+                <!-- Dynamic rows added here via JavaScript -->
+            </tbody>
+        </table>
+    </section>
+
+    <script src="ra.js"></script>
+</body>
+</html>

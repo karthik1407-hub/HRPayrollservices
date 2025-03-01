@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayEase</title>
+    <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f2f5; /* light background color */
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    /* Style the form as a card */
+    #signupForm {
+        width: 300px;
+        padding: 20px;
+        background-color:transparent; /* card background color */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* card shadow */
+        border-radius: 8px; /* rounded corners */
+        text-align: center; /* center content within form */
+        backdrop-filter: blur(3px);
+    }
+    
+    #signupForm label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    #signupForm input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    #signupForm button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50; /* button background color */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    #signupForm button:hover {
+        background-color: #45a049;
+    }
+    body{
+        background-image: url(/images/image.png);
+    }
+
+    .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            max-width: 350px;
+            margin: 0;
+            background: linear-gradient(135deg, #0078d7, #00a4e4);
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            color: white;
+        }
+
+        /* Chat header */
+        .chat-header {
+            background: #005bb5;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Chat box */
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+            background: #ffffff;
+            color: #333;
+        }
+
+        .chat-box .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 12px;
+            max-width: 80%;
+        }
+
+        .chat-box .user-message {
+            background-color: #d1e7ff;
+            color: #005bb5;
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .chat-box .bot-message {
+            background-color: #e2ffe2;
+            color: #007800;
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        /* Chat input */
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #ddd;
+            padding: 10px;
+            background: #f4f4f9;
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .chat-input button {
+            background-color: #565b5f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background 0.3s;
+        }
+
+        .chat-input button:hover {
+            background-color: #535455;
+        }
+
+        /* Chat icon */
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #7b8186, #6a829b);
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .chat-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .chat-icon img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cancel-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    outline: none;
+    transition: color 0.3s;
+}
+
+.cancel-button:hover {
+    color: #ffcccb; /* Optional: Highlight color on hover */
+}
+
+.chat-header {
+    position: relative; /* Ensures the cancel button is positioned within the header */
+    padding: 15px;
+    background: #005bb5;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="email" id="email1">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Sign Up</button>
+        <div>Already Have a Account? <a href="/login.html">Login Here</a>  </div>
+    </form>
+</div>
+<div class="chat-icon" id="chat-icon" onclick="toggleChat()">
+    <img src="/images/message_4408459.png" alt="Chat Icon">
+</div>
+<div class="chat-container" id="chat-container">
+    <div class="chat-header">
+        <h2>Chatbot</h2>
+        <button class="cancel-button" onclick="toggleChat()">&#x2715;</button>
+    </div>
+    <div id="chat-box" class="chat-box">
+        <!-- Chat messages will be appended here -->
+    </div>
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Type a message..." />
+        <button id="send-button">Send</button>
+    </div>
+</div>
+
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from refreshing the page
+
+            const formData = {
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            // Simulate form submission
+            console.log('User signed up:', formData);
+
+            // Redirect to the login page after sign up
+            window.location.href = 'login.html';
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+    const chatContainer = document.getElementById('chat-container');
+    const chatIcon = document.getElementById('chat-icon');
+    chatContainer.style.display = 'none'; // Explicitly hide the chat container initially
+    chatIcon.style.display = 'flex';     // Ensure the chat icon is visible initially
+});
+
+function toggleChat() {
+    const chatContainer = document.getElementById('chat-container');
+    const chatIcon = document.getElementById('chat-icon');
+    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+        chatContainer.style.display = 'flex';
+        chatIcon.style.display = 'none'; // Hide the chat icon when chat container is shown
+    } else {
+        chatContainer.style.display = 'none';
+        chatIcon.style.display = 'flex'; // Show the chat icon when chat container is hidden
+    }
+}
+    </script>
+</body>
+</html>

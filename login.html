@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Center the form on the page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5; /* light background color */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the form as a card */
+#loginForm {
+    width: 300px;
+    padding: 20px;
+    background-color: transparent; /* card background color */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* card shadow */
+    border-radius: 8px; /* rounded corners */
+    text-align: center; /* center content within form */
+    backdrop-filter: blur(3px);
+}
+
+#loginForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#logg {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* button background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#logg:hover {
+    background-color: #45a049;
+}
+
+        body{
+            background-image: url(background\ image.webp);
+        }
+    </style>
+<body>
+    
+    <form id="loginForm">
+        <h2>Login</h2>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required>
+
+        <button id="logg" type="submit">Login</button><br>
+        <div>New User? <a href="/signup.html">SignUp</a>  </div>
+    </form>
+        
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const loginData = {
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            // Simulate login
+            console.log('User logged in:', loginData);
+
+            // Redirect to the dashboard page after login
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>

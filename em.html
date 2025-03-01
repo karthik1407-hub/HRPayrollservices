@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="em.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Management System</h1>
+
+        <!-- Dark Mode Toggle -->
+        <div class="dark-mode-toggle">
+            <button id="toggleDarkMode">Switch to Dark Mode</button>
+        </div>
+
+        <!-- Add Employee Form -->
+        <div class="form-container">
+            <h2>Add Employee</h2>
+            <form id="employeeForm">
+                <input type="hidden" id="editIndex" value="-1">
+                
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" placeholder="Enter First Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" placeholder="Enter Last Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" placeholder="Enter Phone Number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" placeholder="Enter Department" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="salary">Salary</label>
+                    <input type="number" id="salary" placeholder="Enter Salary" required>
+                </div>
+
+                <button type="submit" id="submitButton" class="btn-primary">Add Employee</button>
+            </form>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search employees by name..." onkeyup="searchEmployees()">
+        </div>
+
+        <!-- Salary Range Filter -->
+        <div class="salary-filter-container">
+            <label for="salaryRange">Filter by Salary: </label>
+            <input type="range" id="salaryRange" min="0" max="100000" step="1000" oninput="filterBySalary()">
+            <span id="salaryRangeValue">100,000</span>
+        </div>
+
+        <!-- Employee Summary / Analytics -->
+        <div class="analytics">
+            <h2>Employee Summary</h2>
+            <p>Total Employees: <span id="totalEmployees">0</span></p>
+            <p>Average Salary: <span id="averageSalary">0</span></p>
+            <p>Employees per Department: <span id="employeesPerDepartment">0</span></p>
+        </div>
+
+        <!-- Employee List Table -->
+        <div class="table-container">
+            <h2>Employee List</h2>
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th onclick="sortTable('firstName')">First Name</th>
+                        <th onclick="sortTable('lastName')">Last Name</th>
+                        <th onclick="sortTable('email')">Email</th>
+                        <th onclick="sortTable('phone')">Phone</th>
+                        <th onclick="sortTable('department')">Department</th>
+                        <th onclick="sortTable('salary')">Salary</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeList">
+                    <!-- Dynamic Employee Rows -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination-controls">
+            <button id="prevPage" onclick="prevPage()">Previous</button>
+            <span id="currentPage">1</span>
+            <button id="nextPage" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Export to CSV -->
+        <button id="exportCSV" onclick="exportToCSV()">Export to CSV</button>
+    </div>
+
+    <script src="em.js"></script>
+</body>
+</html>

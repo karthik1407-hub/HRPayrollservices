@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayEase</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <h2>Dashboard</h2>
+        </div>
+        <div class="menu">
+            <a href="ep.html">Profile</a>
+            <a href="em.html">Employee Management</a>
+            <a href="at.html">Attendance Tracking</a>
+            <a href="pm.html">Payroll Management</a>
+            <a href="ra.html">Reports & Analytics</a>
+        </div>
+        <a href="login.html" class="logout">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-dashboard">
+        <h1>Welcome, You!</h1>
+        
+        <div class="dashboard-cards">
+            <div class="card" id="card1">
+                <h4>Total Employees</h4>
+                <p>45</p>
+            </div>
+            <div class="card" id="card2">
+                <h4>Payroll Status</h4>
+                <p>Due in 3 Days</p>
+            </div>
+            <div class="card" id="card3">
+                <h4>Leave Requests</h4>
+                <p>3 Unapproved</p>
+            </div>
+            <div class="card" id="card4">
+                <h4>Pending Actions</h4>
+                <p>10</p>
+            </div>
+        </div>
+
+        <button onclick="openModal()">Add New Employee</button>
+
+        <!-- Add Employee Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Add Employee</h2>
+                <form id="modal-form" onsubmit="handleSubmit(event)">
+                    <input type="text" id="employee-name" placeholder="Employee Name" required>
+                    <input type="text" id="employee-role" placeholder="Employee Role" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Notification Bell -->
+        <div class="Logout">
+            <span id="notif-count"></span>
+            Logout
+        </div>
+
+        <!-- Search Bar -->
+        <input type="text" id="search-bar" placeholder="Search Employees" onkeyup="searchEmployee()">
+        
+        <!-- Employee Cards -->
+        <div id="employee-cards"></div>
+    </div>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>
